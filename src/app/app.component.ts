@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
 
 @Component({
   selector: 'app-root',
@@ -22,22 +23,24 @@ export class AppComponent {
       url: 'https://github.com/fvdavid/fv-highcharts'
     },
     {
-      nameTags: '#nestJS, #graphQL',
+      nameTags: '#nestjs, #graphql',
       url: 'https://github.com/fvdavid/fv-nestv7-starter/tree/graphql-code'
     },
     {
-      nameTags: '#nestJS, #excel',
+      nameTags: '#nestjs, #excel',
       url: 'https://github.com/fvdavid/fv-nestv7-starter/tree/exportToExcel'
     },
     {
-      nameTags: '#nestJS, #stripe, #twilio',
+      nameTags: '#nestjs, #stripe, #twilio',
       url: 'https://gitlab.com/fvdavid/nest-custom-payment'
     },
     {
-      nameTags: '#expressJS, #ts, #solidprinciple',
+      nameTags: '#expressjs, #ts, #solidprinciple',
       url: 'https://github.com/fvdavid/FvExpress'
     },
   ];
+
+  constructor(private gtmService: GoogleTagManagerService) {}
 
   onChange(everDone: any) {
     this.goToLink(everDone.target.value);
@@ -45,5 +48,16 @@ export class AppComponent {
 
   goToLink(url: string) {
     window.open(url, "_blank");
+  }
+
+  getTags(nameTag: string) {
+    console.log('name Tag : ', nameTag);
+
+    const gtmTag = {
+      event: nameTag,
+      pageName: nameTag
+    };
+
+    this.gtmService.pushTag(gtmTag);
   }
 }

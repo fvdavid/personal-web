@@ -4,4 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Features
 - [x] Website
-- [] Google TAG
+- [ ] Google TAG
+- [ ] read the fundamental of google TAG
+
+## Build and Build Static
+    - ng build
+    - npx scully
+
