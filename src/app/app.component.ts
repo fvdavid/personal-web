@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
-import { GoogleTagManagerService } from 'angular-google-tag-manager';
+import { Component, OnInit } from '@angular/core';
+
+import { GoogleAnalyticsService } from 'ngx-google-analytics';
+// import { GoogleTagManagerService } from 'angular-google-tag-manager';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'fv-web';
+export class AppComponent implements OnInit {
 
   everDones = [
     {
@@ -40,7 +41,14 @@ export class AppComponent {
     },
   ];
 
-  constructor(private gtmService: GoogleTagManagerService) {}
+  constructor(
+    protected gaService: GoogleAnalyticsService,
+    // private gtmService: GoogleTagManagerService
+  ) { }
+
+  ngOnInit() {
+    this.gaService.pageView('/', 'home');
+  }
 
   onChange(everDone: any) {
     this.goToLink(everDone.target.value);
@@ -50,14 +58,42 @@ export class AppComponent {
     window.open(url, "_blank");
   }
 
-  getTags(nameTag: string) {
-    console.log('name Tag : ', nameTag);
+  // getTags(nameTag: string) {
+  //   console.log('name Tag : ', nameTag);
 
-    const gtmTag = {
-      event: nameTag,
-      pageName: nameTag
-    };
+  //   const gtmTag = {
+  //     event: nameTag,
+  //     pageName: nameTag
+  //   };
 
-    this.gtmService.pushTag(gtmTag);
+  //   this.gtmService.pushTag(gtmTag);
+  // }
+
+  clickMedium() {
+    this.gaService.event('enter_medium', 'cta_medium');
+  }
+
+  clickResume() {
+    this.gaService.event('enter_resume', 'cta_resume');
+  }
+
+  clickSampleCode() {
+    this.gaService.event('enter_samplecode', 'cta_samplecode');
+  }
+
+  clickTwitter() {
+    this.gaService.event('enter_twitter', 'cta_twitter');
+  }
+
+  clickGithub() {
+    this.gaService.event('enter_github', 'cta_github');
+  }
+
+  clickGitlab() {
+    this.gaService.event('enter_gitlab', 'cta_gitlab');
+  }
+
+  clickWhatsapp() {
+    this.gaService.event('enter_whatsapp', 'cta_whatsapp');
   }
 }

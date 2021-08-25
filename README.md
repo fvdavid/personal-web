@@ -4,8 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Features
 - [x] Website
-- [ ] Google TAG
-- [ ] read the fundamental of google TAG
+- [x] Google Analytics
+- [x] PWA
+- [ ] read the fundamental of google Analytics
 
 ## Build and Build Static
     - ng build

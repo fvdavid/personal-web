@@ -18,3 +18,16 @@ Using stored unhandled routes!.
 Using stored unhandled routes!.
    To discover new routes in the angular app use "npm run scully -- --scanRoutes"
 ----------------------------------
+
+----------------------------------
+Using stored unhandled routes!.
+   To discover new routes in the angular app use "npm run scully -- --scanRoutes"
+----------------------------------
+Puppeteer error while rendering "/"
+TimeoutError: Navigation timeout of 30000 ms exceeded
+ we will retry rendering this page up to 3 times.
+Puppeteer error while rendering "/"
+TimeoutError: Navigation timeout of 30000 ms exceeded
+ we will retry rendering this page up to 3 times.
+Received Kill commandClosed servers
+
