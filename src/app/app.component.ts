@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { GoogleAnalyticsService } from 'ngx-google-analytics';
 // import { GoogleTagManagerService } from 'angular-google-tag-manager';
 
@@ -8,7 +9,6 @@ import { GoogleAnalyticsService } from 'ngx-google-analytics';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'fv-web';
 
   everDones = [
     {
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
   ];
 
   constructor(
-    protected gaService: GoogleAnalyticsService
+    protected gaService: GoogleAnalyticsService,
     // private gtmService: GoogleTagManagerService
   ) { }
 
