@@ -14,7 +14,8 @@
 
   <div class="flex px-3 sm:px-0">
     <ul class="w-full md:w-4/5 lg:w-3/6 mx-auto">
-      <li class="mb-4" key="medium">
+
+      <li class="mb-4" key="medium" (click)="clickMedium()">
         <a class="relative transition duration-200 font-bold bg-green-500 border-green-500 border-2 hover:bg-transparent py-4 w-100 block text-center text-gray-800 hover:text-green-400 rounded-lg pl-12 md:px-12"
           href="https://medium.com/@fvdavid" alt="medium" rel="noopener">
           <span class="text-3xl absolute left-0 top-0 bottom-0 pl-3 flex items-center">
@@ -26,7 +27,7 @@
         </a>
       </li>
 
-      <li class="mb-4" key={link.title}>
+      <li class="mb-4" key={link.title} (click)="clickResume()">
         <a class="relative transition duration-200 font-bold bg-green-500 border-green-500 border-2 hover:bg-transparent py-4 w-100 block text-center text-gray-800 hover:text-green-400 rounded-lg pl-12 md:px-12"
           href="https://www.canva.com/design/DAEkG5LA_lM/x4_L2P2wFHNJQ40mZx3cVg/view?utm_content=DAEkG5LA_lM&utm_campaign=designshare&utm_medium=link&utm_source=homepage_design_menu"
           alt='I have Done' target="_blank" rel="noopener">
@@ -39,7 +40,7 @@
         </a>
       </li>
 
-      <li class="mb-4" key={link.title}>
+      <li class="mb-4" key={link.title} (click)="clickSampleCode()">
         <a class="relative transition duration-200 font-bold bg-green-500 border-green-500 border-2 hover:bg-transparent py-4 w-100 block text-center text-gray-800 hover:text-green-400 rounded-lg pl-12 md:px-12"
           href="#" alt='Simple Code For Preview' rel="noopener">
           <span class="text-3xl absolute left-0 top-0 bottom-0 pl-3 flex items-center">
@@ -72,21 +73,22 @@
       <div class="md:w-4/6 mx-auto">
 
         <ul class="py-6">
-          <li class="mr-3 inline">
+
+          <li class="mr-3 inline" (click)="clickTwitter()">
             <a class="text-green-400  hover:text-green-600" target="_blank" rel="noopener" alt="twitter"
               href="https://twitter.com/fvdavid__">
               <i class="fa fa-2x fa-twitter"></i>
             </a>
           </li>
 
-          <li class="mr-3 inline">
+          <li class="mr-3 inline" (click)="clickGithub()">
             <a class="text-green-400  hover:text-green-600" target="_blank" rel="noopener" alt="github"
               href="https://github.com/fvdavid">
               <i class="fa fa-2x fa-github"></i>
             </a>
           </li>
 
-          <li class="mr-3 inline">
+          <li class="mr-3 inline" (click)="clickGitlab()">
             <a class="text-green-400  hover:text-green-600" target="_blank" rel="noopener" alt="gitlab"
               href="http://gitlab.com/fvdavid">
               <i class="fa fa-2x fa-gitlab"></i>
@@ -101,7 +103,7 @@
 
 
 <div class="flex items-end justify-end fixed bottom-0 right-0 mb-4 mr-4 z-10">
-  <div>
+  <div (click)="clickWhatsapp()">
     <a title="Chat us for more" href="https://wa.me/6281269949992" target="_blank"
       class="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
       <img class="object-cover object-center w-full h-full rounded-full"
